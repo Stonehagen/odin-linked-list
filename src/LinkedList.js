@@ -42,7 +42,7 @@ export default class LinkedList {
       node = node.nextNode;
       i += 1;
     }
-    return null;
+    return 'Node not Found';
   }
 
   append(value) {
