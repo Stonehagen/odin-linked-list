@@ -6,12 +6,6 @@ export default class LinkedList {
 
   #tail = null;
 
-  #list = [];
-
-  get list() {
-    return this.#list;
-  }
-
   set head(node) {
     this.#head = node;
   }
@@ -29,7 +23,13 @@ export default class LinkedList {
   }
 
   size() {
-    return this.list.length;
+    let length = 0;
+    let node = this.head;
+    while (node !== null) {
+      node = node.nextNode;
+      length += 1;
+    }
+    return length;
   }
 
   at(index) {
@@ -56,7 +56,6 @@ export default class LinkedList {
       this.tail.nextNode = newNode;
       this.tail = newNode;
     }
-    this.#list.push(newNode);
   }
 
   prepend(value) {
@@ -68,7 +67,6 @@ export default class LinkedList {
       this.tail = this.head;
     }
     this.head = newNode;
-    this.#list.push(newNode);
   }
 
   toString() {
