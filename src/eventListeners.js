@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-export const appBtnEl = (linkedList) => {
+const appBtnEl = (linkedList) => {
   const htmlAppButton = document.querySelector('.app-btn');
   const htmlInput = document.querySelector('.node-value');
   const htmlDisplay = document.querySelector('.display');
@@ -11,7 +11,7 @@ export const appBtnEl = (linkedList) => {
   });
 };
 
-export const preBtnEl = (linkedList) => {
+const preBtnEl = (linkedList) => {
   const htmlPreButton = document.querySelector('.pre-btn');
   const htmlInput = document.querySelector('.node-value');
   const htmlDisplay = document.querySelector('.display');
@@ -21,4 +21,9 @@ export const preBtnEl = (linkedList) => {
     htmlInput.value = '';
     htmlDisplay.innerHTML = linkedList.toString();
   });
+};
+
+export const addEventListeners = (linkedList) => {
+  appBtnEl(linkedList);
+  preBtnEl(linkedList);
 };

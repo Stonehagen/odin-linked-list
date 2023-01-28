@@ -64,6 +64,9 @@ export default class LinkedList {
     if (this.size() !== 0) {
       newNode.nextNode = this.head;
     }
+    if (this.size() === 1) {
+      this.tail = this.head;
+    }
     this.head = newNode;
     this.#list.push(newNode);
   }
