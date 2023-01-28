@@ -65,6 +65,18 @@ const popBtnEl = (linkedList) => {
   });
 };
 
+const removeBtnEl = (linkedList) => {
+  const htmlRemoveButton = document.querySelector('.remove-at-btn');
+  const htmlInput = document.querySelector('.node-index');
+  const htmlDisplay = document.querySelector('.display');
+  htmlRemoveButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    linkedList.removeAt(+htmlInput.value);
+    htmlDisplay.innerHTML = linkedList.toString();
+    htmlInput.value = '';
+  });
+};
+
 export const addEventListeners = (linkedList) => {
   appBtnEl(linkedList);
   preBtnEl(linkedList);
@@ -72,4 +84,5 @@ export const addEventListeners = (linkedList) => {
   findBtnEl(linkedList);
   nodeBtnEl(linkedList);
   popBtnEl(linkedList);
+  removeBtnEl(linkedList);
 };

@@ -27,10 +27,6 @@ export const loadPage = (container) => {
   htmlIndexInput.placeholder = 'Node ID';
   htmlIndexInput.classList.add('node-index');
 
-  const htmlRemoveButton = document.createElement('button');
-  htmlRemoveButton.classList.add('remove-btn');
-  htmlRemoveButton.innerHTML = 'Remove Node';
-
   const htmlNodeButton = document.createElement('button');
   htmlNodeButton.classList.add('node-btn');
   htmlNodeButton.innerHTML = 'Display Node';
@@ -38,6 +34,14 @@ export const loadPage = (container) => {
   const htmlPopButton = document.createElement('button');
   htmlPopButton.classList.add('pop-btn');
   htmlPopButton.innerHTML = 'Pop Node';
+
+  const htmlInsertAtButton = document.createElement('button');
+  htmlInsertAtButton.classList.add('insert-at-btn');
+  htmlInsertAtButton.innerHTML = 'Insert Node';
+
+  const htmlRemoveAtButton = document.createElement('button');
+  htmlRemoveAtButton.classList.add('remove-at-btn');
+  htmlRemoveAtButton.innerHTML = 'Remove Node';
 
   const htmlDisplayDiv = document.createElement('div');
   htmlDisplayDiv.classList.add('display');
@@ -48,9 +52,10 @@ export const loadPage = (container) => {
   htmlForm.appendChild(htmlContainButton);
   htmlForm.appendChild(htmlFindButton);
   htmlForm.appendChild(htmlIndexInput);
-  htmlForm.appendChild(htmlRemoveButton);
   htmlForm.appendChild(htmlNodeButton);
   htmlForm.appendChild(htmlPopButton);
+  htmlForm.appendChild(htmlInsertAtButton);
+  htmlForm.appendChild(htmlRemoveAtButton);
   container.appendChild(htmlForm);
   container.appendChild(htmlDisplayDiv);
 };

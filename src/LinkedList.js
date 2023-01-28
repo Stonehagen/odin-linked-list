@@ -70,8 +70,16 @@ export default class LinkedList {
   }
 
   pop() {
-    this.tail = this.at(this.size() - 2);
-    this.tail.nextNode = null;
+    const size = this.size();
+    if (size <= 1) {
+      this.head = null;
+    } else if (size === 2) {
+      this.head.nextNode = null;
+      this.tail = null;
+    } else {
+      this.tail = this.at(size - 2);
+      this.tail.nextNode = null;
+    }
   }
 
   find(value) {
@@ -94,7 +102,39 @@ export default class LinkedList {
     return false;
   }
 
+  insertAt(value, index) {
+    const node = new Node(value);
+    if (index <= 0) {
+      this.prepend(value);
+    } else if (index >= this.size()) {
+      this.append(value);
+    } else {
+      const preNode = this.at(index - 1);
+      const followNode = this.at(index);
+      node.nextNode = followNode;
+      preNode.nextNode = node;
+    }
+  }
+
+  removeAt(index) {
+    if (this.size() <= 1) {
+      this.head = null;
+    } else if (index <= 0) {
+      const followNode = this.at(1);
+      this.head = followNode;
+    } else if (index >= this.size()) {
+      this.pop();
+    } else {
+      const preNode = this.at(index - 1);
+      const followNode = this.at(index + 1);
+      preNode.nextNode = followNode;
+    }
+  }
+
   toString() {
+    if (this.size() === 0) {
+      return null;
+    }
     let listAsString = '';
     let node = this.head;
     do {
