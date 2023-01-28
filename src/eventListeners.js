@@ -65,6 +65,20 @@ const popBtnEl = (linkedList) => {
   });
 };
 
+const insertBtnEl = (linkedList) => {
+  const htmlInsertButton = document.querySelector('.insert-at-btn');
+  const htmlInput = document.querySelector('.node-value');
+  const htmlIndexInput = document.querySelector('.node-index');
+  const htmlDisplay = document.querySelector('.display');
+  htmlInsertButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    linkedList.insertAt(htmlInput.value, +htmlIndexInput.value);
+    htmlDisplay.innerHTML = linkedList.toString();
+    htmlInput.value = '';
+    htmlIndexInput.value = '';
+  });
+};
+
 const removeBtnEl = (linkedList) => {
   const htmlRemoveButton = document.querySelector('.remove-at-btn');
   const htmlInput = document.querySelector('.node-index');
@@ -84,5 +98,6 @@ export const addEventListeners = (linkedList) => {
   findBtnEl(linkedList);
   nodeBtnEl(linkedList);
   popBtnEl(linkedList);
+  insertBtnEl(linkedList);
   removeBtnEl(linkedList);
 };
