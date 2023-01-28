@@ -61,9 +61,11 @@ export default class LinkedList {
 
   prepend(value) {
     const newNode = new Node(value);
-    this.#list.push(newNode);
-    this.head.nextNode = newNode;
+    if (this.size() !== 0) {
+      newNode.nextNode = this.head;
+    }
     this.head = newNode;
+    this.#list.push(newNode);
   }
 
   toString() {
