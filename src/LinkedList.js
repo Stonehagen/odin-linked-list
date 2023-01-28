@@ -35,16 +35,14 @@ export default class LinkedList {
   at(index) {
     let node = this.head;
     let i = 0;
-    while (true) {
+    while (i < this.size()) {
       if (i === index) {
         return node;
-      }
-      if (node.nextNode === null) {
-        return null;
       }
       node = node.nextNode;
       i += 1;
     }
+    return null;
   }
 
   append(value) {
@@ -52,6 +50,7 @@ export default class LinkedList {
     if (this.size() === 0) {
       this.head = newNode;
     } else if (this.size() === 1) {
+      this.head.nextNode = newNode;
       this.tail = newNode;
     } else {
       this.tail.nextNode = newNode;
@@ -65,5 +64,16 @@ export default class LinkedList {
     this.#list.push(newNode);
     this.head.nextNode = newNode;
     this.head = newNode;
+  }
+
+  toString() {
+    let listAsString = '';
+    let node = this.head;
+    do {
+      listAsString += `( ${node.value} ) -> `;
+      node = node.nextNode;
+    } while (node !== null);
+    listAsString += 'null';
+    return listAsString;
   }
 }

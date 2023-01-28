@@ -7,6 +7,6 @@ export const addBtnEl = (linkedList) => {
     e.preventDefault();
     linkedList.append(htmlInput.value);
     htmlInput.value = '';
-    htmlDisplay.innerHTML = linkedList.list;
+    htmlDisplay.innerHTML = linkedList.toString();
   });
 };
