@@ -69,6 +69,11 @@ export default class LinkedList {
     this.head = newNode;
   }
 
+  pop() {
+    this.tail = this.at(this.size() - 2);
+    this.tail.nextNode = null;
+  }
+
   toString() {
     let listAsString = '';
     let node = this.head;

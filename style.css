@@ -6,7 +6,7 @@ body {
 .container {
   height: 100vh;
   display: grid;
-  grid-template-rows: 180px 200px;
+  grid-template-rows: 200px 200px;
   justify-items: center;
   align-content: center;
   gap: 20px;
@@ -15,7 +15,7 @@ body {
 form {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   gap: 10px;
   width: 300px;
   height: 100%;

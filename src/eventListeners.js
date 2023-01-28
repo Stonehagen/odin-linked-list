@@ -35,8 +35,19 @@ const nodeBtnEl = (linkedList) => {
   });
 };
 
+const popBtnEl = (linkedList) => {
+  const htmlPopButton = document.querySelector('.pop-btn');
+  const htmlDisplay = document.querySelector('.display');
+  htmlPopButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    linkedList.pop();
+    htmlDisplay.innerHTML = linkedList.toString();
+  });
+};
+
 export const addEventListeners = (linkedList) => {
   appBtnEl(linkedList);
   preBtnEl(linkedList);
   nodeBtnEl(linkedList);
+  popBtnEl(linkedList);
 };

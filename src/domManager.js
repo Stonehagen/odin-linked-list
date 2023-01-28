@@ -27,6 +27,10 @@ export const loadPage = (container) => {
   htmlNodeButton.classList.add('node-btn');
   htmlNodeButton.innerHTML = 'Display Node';
 
+  const htmlPopButton = document.createElement('button');
+  htmlPopButton.classList.add('pop-btn');
+  htmlPopButton.innerHTML = 'Pop Node';
+
   const htmlDisplayDiv = document.createElement('div');
   htmlDisplayDiv.classList.add('display');
 
@@ -36,6 +40,7 @@ export const loadPage = (container) => {
   htmlForm.appendChild(htmlIndexInput);
   htmlForm.appendChild(htmlRemoveButton);
   htmlForm.appendChild(htmlNodeButton);
+  htmlForm.appendChild(htmlPopButton);
   container.appendChild(htmlForm);
   container.appendChild(htmlDisplayDiv);
 };
