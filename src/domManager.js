@@ -14,6 +14,14 @@ export const loadPage = (container) => {
   htmlPreButton.classList.add('pre-btn');
   htmlPreButton.innerHTML = 'Prepend Node';
 
+  const htmlContainButton = document.createElement('button');
+  htmlContainButton.classList.add('contain-btn');
+  htmlContainButton.innerHTML = 'Contain Value';
+
+  const htmlFindButton = document.createElement('button');
+  htmlFindButton.classList.add('find-btn');
+  htmlFindButton.innerHTML = 'Find Value';
+
   const htmlIndexInput = document.createElement('input');
   htmlIndexInput.type = 'number';
   htmlIndexInput.placeholder = 'Node ID';
@@ -37,6 +45,8 @@ export const loadPage = (container) => {
   htmlForm.appendChild(htmlTextInput);
   htmlForm.appendChild(htmlAppButton);
   htmlForm.appendChild(htmlPreButton);
+  htmlForm.appendChild(htmlContainButton);
+  htmlForm.appendChild(htmlFindButton);
   htmlForm.appendChild(htmlIndexInput);
   htmlForm.appendChild(htmlRemoveButton);
   htmlForm.appendChild(htmlNodeButton);

@@ -23,6 +23,26 @@ const preBtnEl = (linkedList) => {
   });
 };
 
+const containBtnEl = (linkedList) => {
+  const htmlContainButton = document.querySelector('.contain-btn');
+  const htmlInput = document.querySelector('.node-value');
+  const htmlDisplay = document.querySelector('.display');
+  htmlContainButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    htmlDisplay.innerHTML = linkedList.contains(htmlInput.value);
+  });
+};
+
+const findBtnEl = (linkedList) => {
+  const htmlFindButton = document.querySelector('.find-btn');
+  const htmlInput = document.querySelector('.node-value');
+  const htmlDisplay = document.querySelector('.display');
+  htmlFindButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    htmlDisplay.innerHTML = `Index: ${linkedList.find(htmlInput.value)}`;
+  });
+};
+
 const nodeBtnEl = (linkedList) => {
   const htmlNodeButton = document.querySelector('.node-btn');
   const htmlInput = document.querySelector('.node-index');
@@ -48,6 +68,8 @@ const popBtnEl = (linkedList) => {
 export const addEventListeners = (linkedList) => {
   appBtnEl(linkedList);
   preBtnEl(linkedList);
+  containBtnEl(linkedList);
+  findBtnEl(linkedList);
   nodeBtnEl(linkedList);
   popBtnEl(linkedList);
 };
