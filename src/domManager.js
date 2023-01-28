@@ -2,11 +2,22 @@
 export const loadPage = (container) => {
   const htmlForm = document.createElement('form');
 
-  const htmlInput = document.createElement('input');
+  const htmlTextInput = document.createElement('input');
+  htmlTextInput.placeholder = 'Node Value';
+  htmlTextInput.classList.add('node-value');
 
-  const htmlAddButton = document.createElement('button');
-  htmlAddButton.classList.add('add-btn');
-  htmlAddButton.innerHTML = 'Add Node';
+  const htmlAppButton = document.createElement('button');
+  htmlAppButton.classList.add('app-btn');
+  htmlAppButton.innerHTML = 'Append Node';
+
+  const htmlPreButton = document.createElement('button');
+  htmlPreButton.classList.add('pre-btn');
+  htmlPreButton.innerHTML = 'Prepend Node';
+
+  const htmlIndexInput = document.createElement('input');
+  htmlIndexInput.type = 'number';
+  htmlIndexInput.placeholder = 'Node ID';
+  htmlIndexInput.classList.add('node-index');
 
   const htmlRemoveButton = document.createElement('button');
   htmlRemoveButton.classList.add('remove-btn');
@@ -15,8 +26,10 @@ export const loadPage = (container) => {
   const htmlDisplayDiv = document.createElement('div');
   htmlDisplayDiv.classList.add('display');
 
-  htmlForm.appendChild(htmlInput);
-  htmlForm.appendChild(htmlAddButton);
+  htmlForm.appendChild(htmlTextInput);
+  htmlForm.appendChild(htmlAppButton);
+  htmlForm.appendChild(htmlPreButton);
+  htmlForm.appendChild(htmlIndexInput);
   htmlForm.appendChild(htmlRemoveButton);
   container.appendChild(htmlForm);
   container.appendChild(htmlDisplayDiv);
