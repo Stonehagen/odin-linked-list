@@ -23,6 +23,10 @@ export const loadPage = (container) => {
   htmlRemoveButton.classList.add('remove-btn');
   htmlRemoveButton.innerHTML = 'Remove Node';
 
+  const htmlNodeButton = document.createElement('button');
+  htmlNodeButton.classList.add('node-btn');
+  htmlNodeButton.innerHTML = 'Display Node';
+
   const htmlDisplayDiv = document.createElement('div');
   htmlDisplayDiv.classList.add('display');
 
@@ -31,6 +35,7 @@ export const loadPage = (container) => {
   htmlForm.appendChild(htmlPreButton);
   htmlForm.appendChild(htmlIndexInput);
   htmlForm.appendChild(htmlRemoveButton);
+  htmlForm.appendChild(htmlNodeButton);
   container.appendChild(htmlForm);
   container.appendChild(htmlDisplayDiv);
 };
